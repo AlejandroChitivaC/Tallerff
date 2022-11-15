@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+   <title>Gestión de Usuarios</title>
+</h:head>
+<h:body>
+   <h1>Creación de Usuarios</h1>
+   <h:form>
+      Login <h:inputText value="#{usuarioBean.usuario.login}" />
+      <br />
+      Clave: <h:inputText value="#{usuarioBean.usuario.clave}" />
+      <br />
+      Nombres y Apellidos: <h:inputText
+           value="#{usuarioBean.usuario.apellidosNombres}" />
+      <br />
+      Celular: <h:inputText value="#{usuarioBean.usuario.celular}" />
+      <br />
+      Correo: <h:inputText value="#{usuarioBean.usuario.correo}" />
+      <br />
+      Dirección: <h:inputText value="#{usuarioBean.usuario.direccion}" />
+      <br />
+      T.Crédito: <h:inputText value="#{usuarioBean.usuario.tcredito}" />
+      <br />
+      Tipo de Usuario: <h:selectOneMenu
+           value="#{usuarioBean.usuario.tipoUsuario}">
+      <f:selectItem itemLabel="Administrador" itemValue="A" />
+      <f:selectItem itemLabel="Empleado" itemValue="E" />
+      <f:selectItem itemLabel="Cliente" itemValue="C" />
+   </h:selectOneMenu>
+      <br />
+      <h:commandButton action="#{usuarioBean.adicionarUsuario}"
+                       value="Insertar Nuevo Usuario" />
+      <h:commandButton action="#{usuarioBean.modificarUsuario}"
+                       value="Modificar Usuario" />
+      <br />
+      <h:commandLink action="index" value="Regresar" />
+   </h:form>
+</h:body>
+</html>

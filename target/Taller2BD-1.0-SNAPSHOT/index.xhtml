@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>Gestión de Usuarios</title>
+</h:head>
+<h:body>
+    <h1>Gestión de Usuarios</h1>
+    <h:dataTable var="usuario" value="#{usuarioBean.listarUsuarios}">
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Id" />
+            </f:facet>
+            <h:outputText value="#{usuario.id}" />
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Login" />
+            </f:facet>
+            <h:outputText value="#{usuario.login}" />
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Clave" />
+            </f:facet>
+            <h:outputText value="#{usuario.clave}" />
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Nombres Apellidos" />
+            </f:facet>
+            <h:outputText value="#{usuario.apellidosNombres}" />
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Celular" />
+            </f:facet>
+            <h:outputText value="#{usuario.celular}" />
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Correo" />
+            </f:facet>
+            <h:outputText value="#{usuario.correo}" />
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Tipo Usuario" />
+            </f:facet>
+            <h:outputText value="Administrador"
+                          rendered="#{'A' eq usuario.tipoUsuario}" />
+            <h:outputText value="Operativo"
+                          rendered="#{'U' eq usuario.tipoUsuario}" />
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Estado" />
+            </f:facet>
+            <h:outputText value="Activo"
+                          rendered="#{'A' eq usuario.activo}" />
+            <h:outputText value="InActivo"
+                          rendered="#{'I' eq usuario.activo}" />
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Modificar" />
+            </f:facet>
+            <h:form>
+                <h:commandButton action="#{usuarioBean.prepararModificarUsuario}"
+                                 value="Modificar" />
+            </h:form>
+        </h:column>
+        <h:column>
+            <f:facet name="header">
+                <h:outputText value="Eliminar" />
+            </f:facet>
+            <h:form>
+                <h:commandButton action="#{usuarioBean.eliminarUsuario}"
+                                 value="Eliminar" />
+            </h:form>
+        </h:column>
+    </h:dataTable>
+    <br />
+    <h:form>
+        <h:commandLink value="Nuevo Usuario"
+                       action="#{usuarioBean.prepararAdicionarUsuario}" />
+    </h:form>
+</h:body>
+</html>
