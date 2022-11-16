@@ -1,7 +1,6 @@
 package com.university.dao;
 
 import com.university.entity.Usuario;
-
 import java.util.List;
 
 public interface UsuarioDAO {

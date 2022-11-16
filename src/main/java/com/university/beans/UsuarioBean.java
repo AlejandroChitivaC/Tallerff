@@ -4,12 +4,12 @@ import com.university.dao.UsuarioDAO;
 import com.university.dao.impl.UsuarioDAOImpl;
 import com.university.entity.Usuario;
 
+import java.util.Date;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
-import java.util.Date;
-import java.util.List;
 
 @ManagedBean
 @SessionScoped
@@ -23,12 +23,12 @@ public class UsuarioBean {
 		usuario.setActivo("A");
 		usuario.setFechaUltimoPassword(new Date());
 		usuario.setIntentos(0);
-		return "gerenciarUsuario";
+		return "/usuario/registroNuevo.xhtml?faces-redirect=true";
 	}
 
 	public String prepararModificarUsuario() {
 		usuario = (Usuario) (listaUsuarios.getRowData());
-		return "gerenciarUsuario";
+		return "/usuario/modificarRegistro.xhtml?faces-redirect=true";
 	}
 
 	public String eliminarUsuario() {
@@ -37,19 +37,19 @@ public class UsuarioBean {
 		usuarioTemp.setActivo("I");
 		dao.update(usuarioTemp);
 		// dao.remove(usuarioTemp);
-		return "index";
+		return "/usuario/nuevaConsultaRich.xhtml?faces-redirect=true";
 	}
 
 	public String adicionarUsuario() {
 		UsuarioDAO dao = new UsuarioDAOImpl();
 		dao.save(usuario);
-		return "index";
+		return "/usuario/nuevaConsultaRich.xhtml?faces-redirect=true";
 	}
 
 	public String modificarUsuario() {
 		UsuarioDAO dao = new UsuarioDAOImpl();
 		dao.update(usuario);
-		return "index";
+		return "/usuario/nuevaConsultaRich.xhtml?faces-redirect=true";
 	}
 
 	public Usuario getUsuario() {

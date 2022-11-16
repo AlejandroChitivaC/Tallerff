@@ -1,12 +1,11 @@
 package com.university.dao.impl;
 
-import com.university.dao.UsuarioDAO;
 import com.university.entity.Usuario;
-import com.university.util.HibernateUtil;
+import com.university.dao.UsuarioDAO;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
-import java.util.List;
+import com.university.util.HibernateUtil;
 
 public class UsuarioDAOImpl implements UsuarioDAO {
 

@@ -1,9 +1,10 @@
 package com.university.util;
 
-import com.university.entity.Auditoria;
-import com.university.entity.Usuario;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+
+import com.university.entity.Usuario;
+import com.university.entity.Auditoria;
 
 public class HibernateUtil {
 

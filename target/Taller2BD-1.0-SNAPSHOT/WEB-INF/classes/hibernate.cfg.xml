@@ -4,8 +4,13 @@
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://192.168.20.48:3306/nameBD</property>
-        <property name="hibernate.connection.username">alejo</property>
+<!--        <property name="hibernate.connection.url">jdbc:mysql://192.168.20.48:3306/comercial</property>-->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tallerapweb</property>
+
+<!--        <property name="hibernate.connection.username">alejo</property>-->
+
+        <property name="hibernate.connection.username">root</property>
+
         <property name="hibernate.connection.password">1234</property>
 
     </session-factory>
